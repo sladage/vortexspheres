@@ -20,7 +20,7 @@ var niceConcatenation = function (list) {
 
 checkWebGLSupportWithExtensions(['ANGLE_instanced_arrays', 'WEBGL_draw_buffers', 'WEBGL_depth_texture'],
     function () { //has webgl with extensions
-        document.getElementById('ui').style.display = 'block';
+        document.getElementById('ui').style.display = 'none';
         document.getElementById('footer').style.display = 'block';
         document.getElementById('qualities').style.display = 'block';
 

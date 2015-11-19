@@ -105,6 +105,21 @@ var Camera = function (element, distance, orbitPoint) {
         onMove(getMousePosition(event, element).x, getMousePosition(event, element).y);
     });
 
+    element.addEventListener('touchstart', function (event) {
+      event.preventDefault();
+      onDown(getTouchPosition(event, element).x, getTouchPosition(event, element).y);
+    });
+
+    element.addEventListener('touchend', function (event) {
+      event.preventDefault();
+      onUp();
+    });
+
+    element.addEventListener('touchmove', function (event) {
+      event.preventDefault();
+      onMove(getTouchPosition(event, element).x, getTouchPosition(event, element).y);
+    });
+
 
     var recomputeViewMatrix = function () {
         var xRotationMatrix = new Float32Array(16),
